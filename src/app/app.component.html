@@ -1,0 +1,47 @@
+<hello name="{{ name }}"></hello>
+
+<!-- ngIf - If condition;true statement;false statement -->
+<p *ngIf="value;then truec; else check">
+     {{value.title}} 
+</p>
+
+<!-- ng If in Template format -->
+<!-- <ng-template [ngIf]="value" [ngIfThen]="truec" [ngIfElse]="check"></ng-template> -->
+
+<!-- bind-ngClass equals to attribute [ngClass] -->
+<p bind-ngClass="{king:true}"
+>
+    {{sideEffectChange()}}
+</p>
+
+<!-- on-click equals to event handler(click) -->
+<button on-click="checkClick()">check</button>
+
+
+<!-- class="{{value.title?value.title:'no'}}" 
+ [class.king]="true" -->
+
+ <!-- #  -> template Ref variable used -->
+ <ng-template #check>amar</ng-template>
+ <ng-template #truec>check</ng-template>
+
+
+ <!-- ng switch -- switch case -->
+ <!-- ngFor --- for statement -->
+ <div  [ngSwitch]="users.gender" *ngFor="let users of user;index as i;first as isFirst;
+ last as isLast;even as evenNum;odd as oddNum;trackBy fn">
+     <div [ngSwitch]="users.gender">
+ <p class="king" *ngSwitchCase="'m'">
+   {{i}} {{users.name}}
+
+</p>
+<p class="queen" *ngSwitchCase="'f'">
+   {{oddNum}} {{users.name}}
+
+</p>
+<p class="" *ngSwitchDefault>
+    {{users.name}}
+
+</p>
+     </div>
+ </div>
